@@ -1,0 +1,14 @@
+spring:
+  #store credentials in env.yml file located in root
+  config:
+    import: file:env.yml
+  datasource:
+    url: ${db.url}
+    username: ${db.username}
+    password: ${db.password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
