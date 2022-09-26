@@ -1,0 +1,43 @@
+<div class="container custom-container-2">
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="Event.length == 0">
+    <p>There are no events yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create">
+      Add Event
+    </button>
+  </div>
+  <!-- Events list table, it hides when there is no Events -->
+  <div *ngIf="Event.length !== 0">
+    <h3 class="mb-3 text-center">Event List</h3>
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Event Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Published</th>
+            <th scope="col">Datetime</th>
+            <th scope="col">MaxParticipants</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let event of Event">
+            <td>{{ event.id }}</td>
+            <td>{{ event.name }}</td>
+            <td>{{ event.published }}</td>
+            <td>{{ event.dateTime }}</td>
+            <td>{{ event.maxParticipants }}</td>
+            <td>
+              <span class="edit" routerLink="/event-edit/{{ event.id }}"
+                >Edit</span>
+              <span class="delete" (click)="deleteEvent(event.id)"
+                >Delete</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

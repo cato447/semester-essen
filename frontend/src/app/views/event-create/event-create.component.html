@@ -1,0 +1,20 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Create Event</h3>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="eventDetails.name" class="form-control" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <input type="checkbox" [(ngModel)]="eventDetails.published" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="eventDetails.dateTime" class="form-control" placeholder="yyyy-MM-ddThh:mm:ss">
+    </div>
+  <div class="form-group">
+    <input type="number" [(ngModel)]="eventDetails.maxParticipants" class="form-control" placeholder=0>
+  </div>
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addEvent(eventDetails)">Create Event</button>
+    </div>
+  </div>
+</div>
